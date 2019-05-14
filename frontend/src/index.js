@@ -4,17 +4,17 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import App from './App';
 import './App.css';
-import Edit from './components/Edit';
 import Create from './components/Create';
 import Show from './components/Show';
+import Search from './components/Search';
 
 ReactDOM.render(
   <Router>
       <div>
-        <Route exact path='/' component={App} />
-        <Route path='/edit/:id' component={Edit} />
+        <Route exact path='/' component={App} />        
         <Route path='/create' component={Create} />
-        <Route path='/show/:id' component={Show} />
+        <Route path='/show' component={Show} />
+        <Route path='/search' component={Search} />
       </div>
   </Router>,
   document.getElementById('root')

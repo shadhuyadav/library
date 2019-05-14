@@ -22,12 +22,11 @@ auth.inMemoryAuthentication().withUser("adminuser").password("{noop}admin").auth
 @Override
 protected void configure(HttpSecurity http) throws Exception{
 	
-	 http.cors().configurationSource(request -> new CorsConfiguration().applyPermitDefaultValues());
-	
-	
-	http.csrf().disable().authorizeRequests()
-	.antMatchers("**/addBook","**/updateBook","**/deleteBook").hasRole("ADMIN")
-	.antMatchers("/","/api**").permitAll().and().httpBasic();
+	 http.cors().configurationSource(request -> new CorsConfiguration().applyPermitDefaultValues());	
+	 http.csrf().disable().authorizeRequests()
+	.antMatchers("**/addBook").hasRole("ADMIN")
+	.antMatchers("/","/api**")
+	.permitAll().and().httpBasic();
 	
 	
 

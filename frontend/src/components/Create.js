@@ -25,7 +25,7 @@ class Create extends Component {
     const { name, edition, price, issuedUser} = this.state;
     var uname = 'adminuser';
     var pass = 'admin';
-    axios.post('http://localhost:8102/library/api/addBook/', { name, edition, price, issuedUser },{
+    axios.post('http://localhost:8102/library/api/addBook', { name, edition, price, issuedUser },{
     	  auth: {
     		    username: uname,
     		    password: pass
@@ -47,7 +47,7 @@ class Create extends Component {
             </h3>
           </div>
           <div class="panel-body">
-            <h4><Link to="/"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> Books List</Link></h4>
+            <h4><Link to="/"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> Home</Link></h4>
             <form onSubmit={this.onSubmit}>
               <div class="form-group">
                 <label for="isbn">Name:</label>

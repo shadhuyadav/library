@@ -7,6 +7,7 @@ import com.library.model.Book;
 
 
 public interface BookRepository extends CrudRepository<Book, String> {
-    @Override
-    void delete(Book deleted);
+	
+	public Iterable<Book> findByName(String name);
+   
 }
