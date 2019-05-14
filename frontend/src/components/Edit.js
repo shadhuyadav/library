@@ -33,8 +33,8 @@ class Edit extends Component {
     var pass = 'admin';
     axios.put('http://localhost:8102/library/api/updateBook'+this.props.match.params.id, { name, edition, price, issuedUser },{
   	  auth: {
-		    Username: uname,
-		    Password: pass
+		    username: uname,
+		    password: pass
 		  }})
       .then((result) => {
         this.props.history.push("/show/"+this.props.match.params.id)

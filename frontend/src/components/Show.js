@@ -31,8 +31,8 @@ class Show extends Component {
     var pass = 'admin';
     axios.delete('http://localhost:8102/library/api/deleteBook/'+id,{
   	  auth: {
-		    Username: uname,
-		    Password: pass
+		    username: uname,
+		    password: pass
 		  }})
       .then((result) => {
         this.props.history.push("/")
@@ -49,7 +49,7 @@ class Show extends Component {
             </h3>
           </div>
           <div class="panel-body">
-            <h4><Link to="/show"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> Books List</Link></h4>
+            <h4><Link to="/"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> Books List</Link></h4>
             <dl>
               <dt>Name:</dt>
               <dd>{this.state.book.name}</dd>
