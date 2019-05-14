@@ -12,13 +12,7 @@ class Edit extends Component {
   }
 
   componentDidMount() {
-	  var uname = 'devuser';
-	  var pass = 'dev';
-    axios.get('http://localhost:8102/library/api/findBook/'+this.props.match.params.id,{
-  	  auth: {
-		    Username: uname,
-		    Password: pass
-		  }})
+    axios.get('http://localhost:8102/library/api/findBook/'+this.props.match.params.id)
       .then(res => {
         this.setState({ book: res.data });
         console.log(this.state.book);

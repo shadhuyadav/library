@@ -13,13 +13,8 @@ class App extends Component {
   }
 
   componentDidMount() {
-	  var uname = 'devuser';
-	  var pass = 'dev';
-    axios.get('http://localhost:8102/library/api/listBooks',{
-  	  auth: {
-		    Username: uname,
-		    Password: pass
-		  }})
+	 
+    axios.get('http://localhost:8102/library/api/listBooks')
       .then(res => {
         this.setState({ books: res.data });
         console.log(this.state.books);
