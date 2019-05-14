@@ -10,8 +10,7 @@ class Create extends Component {
     this.state = {
       name: '',
       edition: '',
-      price: '',
-      issuedUser: ''
+      price: ''
     };
   }
   onChange = (e) => {
@@ -22,10 +21,10 @@ class Create extends Component {
   onSubmit = (e) => {
     e.preventDefault();
 
-    const { name, edition, price, issuedUser} = this.state;
+    const { name, edition, price} = this.state;
     var uname = 'adminuser';
     var pass = 'admin';
-    axios.post('http://localhost:8102/library/api/addBook', { name, edition, price, issuedUser },{
+    axios.post('http://localhost:8102/library/api/addBook', { name, edition, price},{
     	  auth: {
     		    username: uname,
     		    password: pass
@@ -37,7 +36,7 @@ class Create extends Component {
   }
 
   render() {
-    const { name, edition, price, issuedUser } = this.state;
+    const { name, edition, price } = this.state;
     return (
       <div class="container">
         <div class="panel panel-default">
@@ -61,10 +60,7 @@ class Create extends Component {
                 <label for="author">Price:</label>
                 <input type="text" class="form-control" name="price" value={price} onChange={this.onChange} placeholder="Price" />
               </div>
-              <div class="form-group">
-                <label for="published_date">IssuedUser:</label>
-                <input type="text" class="form-control" name="issuedUser" value={issuedUser} onChange={this.onChange} placeholder="IssuedUser" />
-              </div>
+             
               <button type="submit" class="btn btn-default">Submit</button>              
               
             </form>

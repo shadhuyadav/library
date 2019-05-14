@@ -11,16 +11,15 @@ public class Book {
     String name;
     String edition;
     long price;
-    String issuedUser ;
 
     public Book() {
     }
 
-    public Book(String name, String edition, long price, String issuedUser) {
+    public Book(String name, String edition, long price) {
         this.name = name;
         this.edition = edition;
         this.price = price;
-        this.issuedUser = issuedUser;
+        
     }
 
 	public String getId() {
@@ -53,14 +52,6 @@ public class Book {
 
 	public void setPrice(long price) {
 		this.price = price;
-	}
-
-	public String getIssuedUser() {
-		return issuedUser;
-	}
-
-	public void setIssuedUser(String issuedUser) {
-		this.issuedUser = issuedUser;
 	}
 
 

@@ -58,7 +58,6 @@ class Search extends Component {
                   <th>Name</th>
                   <th>Edition</th>
                   <th>Price</th>
-                  <th>IssuedUser</th>
                 </tr>
               </thead>
               <tbody>
@@ -67,7 +66,6 @@ class Search extends Component {
                 <td>{c.name}</td>
                 <td>{c.edition}</td>
                 <td>{c.price}</td>
-                <td>{c.issuedUser}</td>
               </tr>
             )}
               </tbody>
