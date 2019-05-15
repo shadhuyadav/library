@@ -11,16 +11,9 @@ public class Book {
     String name;
     String edition;
     long price;
+    String issuedUserId;
 
-    public Book() {
-    }
-
-    public Book(String name, String edition, long price) {
-        this.name = name;
-        this.edition = edition;
-        this.price = price;
-        
-    }
+   
 
 	public String getId() {
 		return id;
@@ -52,6 +45,14 @@ public class Book {
 
 	public void setPrice(long price) {
 		this.price = price;
+	}
+
+	public String getIssuedUserId() {
+		return issuedUserId;
+	}
+
+	public void setIssuedUserId(String issuedUserId) {
+		this.issuedUserId = issuedUserId;
 	}
 
 

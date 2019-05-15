@@ -7,6 +7,7 @@ import './App.css';
 import Create from './components/Create';
 import Show from './components/Show';
 import Search from './components/Search';
+import Update from './components/Update';
 
 ReactDOM.render(
   <Router>
@@ -15,6 +16,7 @@ ReactDOM.render(
         <Route path='/create' component={Create} />
         <Route path='/show' component={Show} />
         <Route path='/search' component={Search} />
+        <Route path='/update' component={Update} />
       </div>
   </Router>,
   document.getElementById('root')

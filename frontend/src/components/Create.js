@@ -30,6 +30,7 @@ class Create extends Component {
     		    password: pass
     		  }})
       .then((result) => {
+    	  alert("successfull added")
     	  this.props.history.push("/")
         
       });
@@ -50,15 +51,15 @@ class Create extends Component {
             <form onSubmit={this.onSubmit}>
               <div class="form-group">
                 <label for="isbn">Name:</label>
-                <input type="text" class="form-control" name="name" value={name} onChange={this.onChange} placeholder="Name" />
+                <input type="text" class="form-control" name="name" value={name} onChange={this.onChange} placeholder="Name" required="required" />
               </div>
               <div class="form-group">
                 <label for="title">Edition:</label>
-                <input type="text" class="form-control" name="edition" value={edition} onChange={this.onChange} placeholder="Edition" />
+                <input type="text" class="form-control" name="edition" value={edition} onChange={this.onChange} placeholder="Edition" required="required"/>
               </div>
               <div class="form-group">
                 <label for="author">Price:</label>
-                <input type="text" class="form-control" name="price" value={price} onChange={this.onChange} placeholder="Price" />
+                <input type="text" class="form-control" name="price" value={price} onChange={this.onChange} placeholder="Price" required="required" />
               </div>
              
               <button type="submit" class="btn btn-default">Submit</button>              

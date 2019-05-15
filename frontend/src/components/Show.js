@@ -38,14 +38,16 @@ class Show extends Component {
                   <th>Name</th>
                   <th>Edition</th>
                   <th>Price</th>
+                  <th>IssuedUserId</th>
                 </tr>
               </thead>
               <tbody>
                 {this.state.books.map(c =>
                   <tr>
-                    <td>{c.name}</td>
+                  <td><Link to={`/update/${c.id}`}>{c.name}</Link></td> 
                     <td>{c.edition}</td>
                     <td>{c.price}</td>
+                    <td>{c.issuedUserId}</td>
                   </tr>
                 )}
               </tbody>
