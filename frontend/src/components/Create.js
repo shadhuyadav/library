@@ -10,8 +10,7 @@ class Create extends Component {
     this.state = {
       name: '',
       edition: '',
-      price: '',
-      issuedUser: ''
+      price: ''
     };
   }
   onChange = (e) => {
@@ -22,22 +21,23 @@ class Create extends Component {
   onSubmit = (e) => {
     e.preventDefault();
 
-    const { name, edition, price, issuedUser} = this.state;
+    const { name, edition, price} = this.state;
     var uname = 'adminuser';
     var pass = 'admin';
-    axios.post('http://localhost:8102/library/api/addBook', { name, edition, price, issuedUser },{
+    axios.post('http://localhost:8102/library/api/addBook', { name, edition, price},{
     	  auth: {
     		    username: uname,
     		    password: pass
     		  }})
       .then((result) => {
+    	  alert("successfull added")
     	  this.props.history.push("/")
         
       });
   }
 
   render() {
-    const { name, edition, price, issuedUser } = this.state;
+    const { name, edition, price } = this.state;
     return (
       <div class="container">
         <div class="panel panel-default">
@@ -51,20 +51,17 @@ class Create extends Component {
             <form onSubmit={this.onSubmit}>
               <div class="form-group">
                 <label for="isbn">Name:</label>
-                <input type="text" class="form-control" name="name" value={name} onChange={this.onChange} placeholder="Name" />
+                <input type="text" class="form-control" name="name" value={name} onChange={this.onChange} placeholder="Name" required="required" />
               </div>
               <div class="form-group">
                 <label for="title">Edition:</label>
-                <input type="text" class="form-control" name="edition" value={edition} onChange={this.onChange} placeholder="Edition" />
+                <input type="text" class="form-control" name="edition" value={edition} onChange={this.onChange} placeholder="Edition" required="required"/>
               </div>
               <div class="form-group">
                 <label for="author">Price:</label>
-                <input type="text" class="form-control" name="price" value={price} onChange={this.onChange} placeholder="Price" />
+                <input type="text" class="form-control" name="price" value={price} onChange={this.onChange} placeholder="Price" required="required" />
               </div>
-              <div class="form-group">
-                <label for="published_date">IssuedUser:</label>
-                <input type="text" class="form-control" name="issuedUser" value={issuedUser} onChange={this.onChange} placeholder="IssuedUser" />
-              </div>
+             
               <button type="submit" class="btn btn-default">Submit</button>              
               
             </form>

@@ -8,6 +8,7 @@ import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
 
 @Configuration
 @EnableWebSecurity
@@ -22,7 +23,7 @@ auth.inMemoryAuthentication().withUser("adminuser").password("{noop}admin").auth
 @Override
 protected void configure(HttpSecurity http) throws Exception{
 	
-	 http.cors().configurationSource(request -> new CorsConfiguration().applyPermitDefaultValues());	
+	// http.cors().configurationSource(request -> new CorsConfiguration().applyPermitDefaultValues());	
 	 http.csrf().disable().authorizeRequests()
 	.antMatchers("**/addBook").hasRole("ADMIN")
 	.antMatchers("/","/api**")
@@ -36,6 +37,5 @@ protected void configure(HttpSecurity http) throws Exception{
 public void configure(WebSecurity web) {
 	web.ignoring().antMatchers("/admin/health","/admin");
 }
-	
-	
+
 }
